@@ -1,11 +1,5 @@
-import { Button } from '@mui/material';
+import { Outlet } from 'react-router';
 
 export const App: React.FC = () => {
-  return (
-    <div>
-      <Button variant="contained" color="primary">
-        Hello Mui
-      </Button>
-    </div>
-  );
+  return <Outlet />;
 };

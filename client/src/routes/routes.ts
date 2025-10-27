@@ -5,5 +5,7 @@ export const routes = {
   register: '/register',
   profile: '/profile',
   faq: '/faq',
-  partners: '/partners',
+  clubsAndCoaches: '/clubs-coaches',
+  gallery: '/gallery',
+  blog: '/blog',
 };

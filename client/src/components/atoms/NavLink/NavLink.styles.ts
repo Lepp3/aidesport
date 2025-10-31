@@ -1,12 +1,16 @@
 import { createStyles } from '../../../utils/createStyles';
 
 export const styles = createStyles({
-  appBar: {
-    display: 'flex',
-    flexDirection: 'row',
-    padding: '10px',
+  base: {
+    textDecoration: 'none',
     alignItems: 'center',
-    justifyContent: 'space-between',
     textAlign: 'center',
+    py: 1,
+  },
+  button: {
+    textDecoration: 'none',
+    alignItems: 'center',
+    textAlign: 'center',
+    py: 1,
   },
 });

@@ -1,8 +1,10 @@
-import { AppBar, Box, Toolbar } from "@mui/material";
-import { Link } from "react-router";
-import { routes } from "../../../routes/routes";
-import { UserMenu } from "../UserMenu/UserMenu";
-import { styles } from "./NavBar.styles";
+import { AppBar, Box, Toolbar } from '@mui/material';
+import { Link } from 'react-router';
+import { routes } from '../../../routes/routes';
+import { NavLink } from '../../atoms/NavLink/NavLink';
+import { UserMenu } from '../UserMenu/UserMenu';
+import { navLinks } from './NavBar.static';
+import { styles } from './NavBar.styles';
 
 export const NavBar: React.FC = () => {
   return (
@@ -13,21 +15,9 @@ export const NavBar: React.FC = () => {
             <img src="https://static.thenounproject.com/png/4778723-200.png" />
           </Box>
         </Toolbar>
-        <Box component={Link} to={routes.home}>
-          Find Sport
-        </Box>
-        <Box component={Link} to={routes.blog}>
-          Blog
-        </Box>
-        <Box component={Link} to={routes.gallery}>
-          Gallery
-        </Box>
-        <Box component={Link} to={routes.clubsAndCoaches}>
-          Clubs and Coaches
-        </Box>
-        <Box component={Link} to={routes.about}>
-          About us
-        </Box>
+        {navLinks.map(({ to, label, variant }) => (
+          <NavLink key={to} to={to} label={label} variant={variant} />
+        ))}
         <UserMenu />
       </AppBar>
     </>

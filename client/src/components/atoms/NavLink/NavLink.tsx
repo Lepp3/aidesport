@@ -6,8 +6,13 @@ import { styles } from './NavLink.styles';
 export const NavLink: React.FC<NavLinkProps> = ({
   to,
   label,
+  img,
+  alt,
   variant = 'text',
-  sx = {},
+  sx = {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
 }) => {
   return (
     <Box
@@ -19,7 +24,15 @@ export const NavLink: React.FC<NavLinkProps> = ({
         ...sx,
       }}
     >
-      {label && <span>{label}</span>}
+      {img ? (
+        <img
+          src={img}
+          alt={alt}
+          style={{ maxHeight: '100px', maxWidth: '100px', display: 'block' }}
+        />
+      ) : (
+        label && <span>{label}</span>
+      )}
     </Box>
   );
 };

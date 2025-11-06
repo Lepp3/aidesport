@@ -6,8 +6,7 @@ import { router } from './routes/router';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <CssBaseline>
-      <RouterProvider router={router} />
-    </CssBaseline>
+    <CssBaseline />
+    <RouterProvider router={router} />
   </StrictMode>
 );

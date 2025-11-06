@@ -1,9 +1,8 @@
-import { AppBar, Box, Toolbar } from '@mui/material';
-import { Link } from 'react-router';
+import { AppBar, Toolbar } from '@mui/material';
 import { routes } from '../../../routes/routes';
 import { NavLink } from '../../atoms/NavLink/NavLink';
+import { SiteNavigation } from '../SiteNavigation/SiteNavigation';
 import { UserMenu } from '../UserMenu/UserMenu';
-import { navLinks } from './NavBar.static';
 import { styles } from './NavBar.styles';
 
 export const NavBar: React.FC = () => {
@@ -11,13 +10,14 @@ export const NavBar: React.FC = () => {
     <>
       <AppBar sx={styles.appBar}>
         <Toolbar>
-          <Box component={Link} to={routes.home}>
-            <img src="https://static.thenounproject.com/png/4778723-200.png" />
-          </Box>
+          <NavLink
+            to={routes.home}
+            variant="text"
+            img="https://static.thenounproject.com/png/4778723-200.png"
+            alt="siteLogo"
+          />
         </Toolbar>
-        {navLinks.map(({ to, label, variant }) => (
-          <NavLink key={to} to={to} label={label} variant={variant} />
-        ))}
+        <SiteNavigation />
         <UserMenu />
       </AppBar>
     </>

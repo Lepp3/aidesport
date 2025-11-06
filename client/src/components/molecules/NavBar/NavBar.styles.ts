@@ -4,7 +4,8 @@ export const styles = createStyles({
   appBar: {
     display: 'flex',
     flexDirection: 'row',
-    padding: '10px',
+    px: 1,
+    py: 1,
     alignItems: 'center',
     justifyContent: 'space-between',
     textAlign: 'center',

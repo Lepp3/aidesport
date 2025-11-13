@@ -7,19 +7,17 @@ import { styles } from './NavBar.styles';
 
 export const NavBar: React.FC = () => {
   return (
-    <>
-      <AppBar sx={styles.appBar}>
-        <Toolbar>
-          <NavLink
-            to={routes.home}
-            variant="text"
-            img="https://static.thenounproject.com/png/4778723-200.png"
-            alt="siteLogo"
-          />
-        </Toolbar>
+    <AppBar sx={styles.appBar}>
+      <Toolbar sx={styles.toolBar}>
+        <NavLink
+          to={routes.home}
+          variant="text"
+          img="https://static.thenounproject.com/png/4778723-200.png"
+          alt="siteLogo"
+        />
         <SiteNavigation />
         <UserMenu />
-      </AppBar>
-    </>
+      </Toolbar>
+    </AppBar>
   );
 };

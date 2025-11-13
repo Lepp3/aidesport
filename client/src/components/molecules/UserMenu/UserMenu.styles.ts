@@ -1,18 +1,18 @@
 import { createStyles } from '../../../utils/createStyles';
 
 export const styles = createStyles({
-  appBar: {
-    position: 'sticky',
-    top: '0px',
-    zIndex: '1100',
-  },
-  toolBar: {
+  outerBox: {
     display: 'flex',
     flexDirection: 'row',
-    px: 1,
-    py: 1,
+    gap: '12px',
+  },
+  logoutButton: {
+    textDecoration: 'none',
     alignItems: 'center',
-    justifyContent: 'space-between',
     textAlign: 'center',
+    py: 1,
+    ':hover': {
+      cursor: 'pointer',
+    },
   },
 });

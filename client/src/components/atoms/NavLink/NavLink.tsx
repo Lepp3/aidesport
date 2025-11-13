@@ -28,7 +28,7 @@ export const NavLink: React.FC<NavLinkProps> = ({
         <img
           src={img}
           alt={alt}
-          style={{ maxHeight: '100px', maxWidth: '100px', display: 'block' }}
+          style={{ maxHeight: '70px', maxWidth: '70px', display: 'block' }}
         />
       ) : (
         label && <span>{label}</span>

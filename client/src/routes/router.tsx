@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router';
+import { App } from '../App';
 import { Layout } from '../components/layout/Layout';
 import { AboutUsPage } from '../components/pages/AboutUsPage/AboutUsPage';
 import { BlogPage } from '../components/pages/BlogPage/BlogPage';
@@ -7,11 +8,16 @@ import { routes } from './routes';
 
 export const router = createBrowserRouter([
   {
-    element: <Layout />,
+    element: <App />,
     children: [
-      { path: routes.home, element: <HomePage /> },
-      { path: routes.blog, element: <BlogPage /> },
-      { path: routes.about, element: <AboutUsPage /> },
+      {
+        element: <Layout />,
+        children: [
+          { path: routes.home, element: <HomePage /> },
+          { path: routes.blog, element: <BlogPage /> },
+          { path: routes.about, element: <AboutUsPage /> },
+        ],
+      },
     ],
   },
 ]);

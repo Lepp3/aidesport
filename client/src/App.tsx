@@ -1,5 +1,10 @@
 import { Outlet } from 'react-router';
+import { UserProvider } from './contexts/UserContext/UserProvider';
 
 export const App: React.FC = () => {
-  return <Outlet />;
+  return (
+    <UserProvider>
+      <Outlet />
+    </UserProvider>
+  );
 };

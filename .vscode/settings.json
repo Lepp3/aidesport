@@ -18,6 +18,7 @@
     "typescriptreact",
     "javascriptreact"
   ],
+  "eslint.useFlatConfig": true,
   "prettier.requireConfig": true,
   "prettier.singleQuote": true,
   "prettier.semi": true,

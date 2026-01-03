@@ -1,14 +1,20 @@
-import express from "express";
+import { app } from "./app";
+import { AppDataSource } from "./dataBase/data-source";
 
-const app = express();
 const PORT = 3000;
 
-app.use(express.json());
+async function bootstrap() {
+  try {
+    await AppDataSource.initialize();
+    console.log("DB connected");
 
-app.get("/", (req, res) => {
-  res.send("Server is running on port 3000!");
-});
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running at http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server", error);
+    process.exit(1);
+  }
+}
 
-app.listen(PORT, () => {
-  console.log("Server running at http://localhost:3000");
-});
+bootstrap();

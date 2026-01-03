@@ -7,4 +7,5 @@ export interface NavLinkProps {
   alt?: string;
   variant?: 'text' | 'button';
   sx?: SxProps<Theme>;
+  onClick?: () => void;
 }

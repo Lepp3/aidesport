@@ -1,5 +1,6 @@
 import { Column, Entity } from 'typeorm';
 import { BaseEntity } from '../../../common/entities/base.entity';
+import { UserRole } from './user.types';
 
 @Entity('user')
 export class UserEntity extends BaseEntity {
@@ -15,11 +16,19 @@ export class UserEntity extends BaseEntity {
   @Column({ name: 'username', type: 'varchar', unique: true })
   username!: string;
 
-  @Column({ unique: true })
+  @Column({ name: 'email', type: 'varchar', unique: true, length: 100 })
   email!: string;
 
-  @Column()
+  @Column({ name: 'password', type: 'varchar', length: 25 })
   password!: string;
+
+  @Column({
+    name: 'role',
+    type: 'enum',
+    enum: UserRole,
+    default: UserRole.USER,
+  })
+  role!: UserRole;
 
   @Column({ name: 'company_id', type: 'uuid', nullable: true })
   companyId?: string;
